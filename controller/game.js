@@ -169,6 +169,8 @@ const createBoard = async () => {
 };
 
 export const game_create = asyncHandler(async (req, res, next) => {
+  const { gameID, title } = req.body;
+  
   const singleBoard = await createBoard();
   const doubleBoard = await createBoard();
   const finalBoard = await createFinalBoard();
@@ -178,7 +180,8 @@ export const game_create = asyncHandler(async (req, res, next) => {
     .from("game")
     .insert([
       {
-        title: "N/A",
+        id: gameID,
+        title: title,
         single_board: singleBoard,
         double_board: doubleBoard,
         final_board: finalBoard,
@@ -192,5 +195,5 @@ export const game_create = asyncHandler(async (req, res, next) => {
     throw error;
   }
 
-  res.status(200).send({ gameID: data.id });
+  res.status(200).send({ gameID });
 });
