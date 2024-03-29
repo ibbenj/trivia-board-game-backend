@@ -81,7 +81,6 @@ export const game_get_one = asyncHandler(async (req, res, next) => {
   }
 
   const game = gameInfo[0];
-  console.log("and",game.single_board);
 
   const board1 = await getBoard(game.single_board);
   const board2 = await getBoard(game.double_board);
@@ -193,5 +192,5 @@ export const game_create = asyncHandler(async (req, res, next) => {
     throw error;
   }
 
-  res.status(200).send({ id: data.id });
+  res.status(200).send({ gameID: data.id });
 });
