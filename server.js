@@ -3,7 +3,7 @@ import express, { json } from "express";
 import categoryRouter from "./routes/category.js";
 import gameRouter from "./routes/game.js";
 import boardRouter from "./routes/board.js";
-// import finalRouter from "./routes/finalBoard.js";
+import finalRouter from "./routes/finalBoard.js";
 import cors from 'cors';
 
 const app = express()
@@ -21,7 +21,7 @@ app.use(cors());
 app.use("/category", categoryRouter);
 app.use("/game", gameRouter);
 app.use("/board", boardRouter);
-// app.use("/final_board", finalRouter);
+app.use("/final", finalRouter);
 app.get("/", function (req, res) {
   res.send("Wiki home page");
 });

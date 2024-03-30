@@ -38,7 +38,7 @@ const getFinalBoard = async (finalID) => {
     throw error;
   }
 
-  return finalBoard;
+  return finalBoard[0];
 }
 
 const getBoard = async (boardID) => {
