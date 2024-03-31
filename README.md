@@ -1,2 +1,2 @@
 # trivia-board-game
-Inspired by Jeopardy
+See frontend project for description https://github.com/ibbenj/trivia-board-game-frontend.
